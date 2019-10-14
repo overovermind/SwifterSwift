@@ -21,7 +21,7 @@ public extension DispatchQueue {
                 return key
             }()
         }
-        return DispatchQueue.getSpecific(key: Static.key) != nil
+        return Self.getSpecific(key: Static.key) != nil
     }
 
 }
@@ -39,7 +39,7 @@ public extension DispatchQueue {
         queue.setSpecific(key: key, value: ())
         defer { queue.setSpecific(key: key, value: nil) }
 
-        return DispatchQueue.getSpecific(key: key) != nil
+        return Self.getSpecific(key: key) != nil
     }
 
 }
